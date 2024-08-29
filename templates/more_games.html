@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+  <section class="" id="moregames">
+    <br />
+    <br />
+    <form class="form" accept="#moregames" method="get">
+      <input class="input" type="text" name="q" placeholder="Search for games..." required />
+      <button class="button" type="submit">Search</button>
+    </form>
+    {% if lista != '' %}
+      <ul class="ul">
+        {% for name, img in lista %}
+          <div class="div">
+            <a href="#">
+              <li class="li">
+                <h2 style="color: white;">{{ name }}</h2>
+                <img clas="img" src="{{ img }}" alt="{{ name }}" />
+              </li>
+            </a>
+          </div>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p style="color: white;">No se encontro ningun juego.</p>
+    {% endif %}
+  </section>
+{% endblock %}

@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <section id="game" class="#1e1f26">
+    <div id="phone">
+      <div id="main-wrapper" class="fancy-scrollbar">
+        <div id="main">
+          <div id="nav"></div>
+
+          <div id="content">
+            <div id="featured-slider" data-active-index="0">
+              <div class="featured-slider-items">
+                <a class="featured-slider-item" style="background-size:contain ; background-image: url({{img}});">
+                  <div class="featured-slider-item-info-wrapper">
+                    <div class="featured-slider-item-info">
+                      <h2 class="title">{{ name }}</h2>
+                      <h3 class="price highlight">{{ price }}</h3>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <div id="list" class="no-scrollbar" data-active-index="0">
+              <div class="list-options">
+                <button class="list-option" type="button" onclick="dlc()">DLC</button>
+                <button class="list-option" type="button" onclick="description()">DESCRIPTION</button>
+                <button class="list-option" type="button" onclick="requirements()">REQUIREMENTS</button>
+                <button class="list-option" type="button" onclick="lenguage()">Support Lenguages</button>
+              </div>
+              <div class="list-items"></div>
+
+              <div class="list-items" id="dlc" style="display:none;">
+                {% for elemento in dlc %}
+                  <a class="list-item">
+                    <img class="list-item-image" src="{{ elemento.1 }}" />
+
+                    <div class="list-item-info">
+                      <div class="title-wrapper section">
+                        <span class="title">{{ elemento.0 }}</span>
+                      </div>
+                      <div class="tags section"></div>
+                      <div class="numbers section">
+                        <span class="price">{{ elemento.2 }}</span>
+                      </div>
+                    </div>
+                  </a>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+
+          <div id="desc" class="contenedor" style="display: none">
+            <p class="descripcion">{{ desc_long|safe }}</p>
+          </div>
+          <div id="requirements" class="contenedor" style="display:none">
+            <div id="list" class="no-scrollbar">
+              <div class="list-options">
+                <button class="list-option" type="button" onclick="pc()">PC</button>
+                <button class="list-option" type="button" onclick="mac()">MAC</button>
+                <button class="list-option" type="button" onclick="linux()">LINUX</button>
+              </div>
+
+              {% if pc_minimum != 'No disponible' %}
+                <div id="pc" style="display: none">
+                  <p>Requirement PC</p>
+                  <p>{{ pc_minimum|safe }}</p>
+                  <br />
+                  <p>{{ pc_recommended|safe }}</p>
+                </div>
+              {% endif %}
+
+              {% if mac_minimum != 'No disponible' %}
+                <div id="mac" style="display: none">
+                  <p>Requirement MAC</p>
+                  <p>{{ mac_minimum|safe }}</p>
+                  <br />
+                  <p>{{ mac_recommended|safe }}</p>
+                </div>
+              {% endif %}
+
+              {% if linux_minimum != 'No disponible' %}
+                <div id="linux" style="display: none">
+                  <p>Requirement LINUX</p>
+                  <p>{{ linux_minimum|safe }}</p>
+                  <br />
+                  <p>{{ linux_recommended|safe }}</p>
+                </div>
+              {% endif %}
+            </div>
+          </div>
+          <div id="lenguages" class="contenedor" style="display: none">
+            <p>{{ lenguage|safe }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

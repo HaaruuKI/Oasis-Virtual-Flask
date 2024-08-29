@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+  <section class="slider" id="about-us">
+    <h1>ACERCA DE NOSOTROS</h1>
+    <h2>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt doloribus consequuntur ut magnam, modi asperiores vitae nesciunt veniam quam temporibus expedita molestias voluptas ipsam deserunt cum minus enim dolore fuga.
+    </h2>
+  </section>
+  <section class="slider" id="game">
+    <h1>JUEGOS</h1>
+    <div class="grid-container">
+       {% for steamid, img in listas %} 
+        <div class="grid-item">
+          <form action="{{url_for('details_game', steam_id=steamid)}}#game" method="GET">
+            <button class="button-juego" type="submit">
+               <img src="{{ img }}" alt="" />
+            </button>
+          </form>
+        </div>
+      {% endfor %} 
+    </div>
+  </section>
+{% endblock %}
