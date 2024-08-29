@@ -1,0 +1,75 @@
+.container-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-form-login {
+    background-color: #1a1b23;
+    padding: 100px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.h2-login {
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.input-group-login {
+    margin-bottom: 15px;
+}
+
+.label-login {
+    color: white;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.input-login[type="email"],
+.input-login[type="text"],
+.input-login[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+.checkbox-group-login {
+    margin-bottom: 20px;
+}
+
+.input-login[type="checkbox"] {
+    vertical-align: middle;
+}
+
+.label-login[for="remember-me"] {
+    color: white;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.button-login[type="submit"] {
+    background-color: #03dac6;
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.button-login[type="submit"]:hover {
+    background-color: #03dac6;
+}
+
+.a-login {
+    color: #03dac6;
+    text-decoration: none;
+}
+
+.p-login {
+    color: white;
+}

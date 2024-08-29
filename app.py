@@ -123,5 +123,15 @@ def more_games():
     return render_template("more_games.html", **context)
 
 
+@app.route("/Login")
+def login():
+    return render_template("login.html")
+
+
+@app.route("/Register")
+def register():
+    return render_template("register.html")
+
+
 if __name__ == "__main__":
     app.run(debug=True)

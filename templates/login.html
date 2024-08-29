@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <section id="login">
+    <div class="container-login">
+      <div class="login-form-login">
+        <h2 class="h2-login">Iniciar sesión</h2>
+        <form method="post">
+          <div class="input-group-login">
+            <label class="label-login" for="username">Correo electronico:</label>
+            <input class="input-login" type="text" id="username" name="username" required />
+          </div>
+          <div class="input-group-login">
+            <label class="label-login" for="password">Contraseña:</label>
+            <input class="input-login" type="password" id="password" name="password" required />
+          </div>
+          <div class="checkbox-group-login">
+            <input class="input-login" type="checkbox" id="remember-me" name="remember-me" />
+            <label class="label-login" for="remember-me">Mostrar contraseña</label>
+          </div>
+          <button class="button-login" type="submit">Iniciar sesión</button>
+        </form>
+        <p>
+          <a class="a-login" href="#">Olvidaste tu contraseña?</a>
+        </p>
+        <p class="p-login">
+          ¿No tienes una cuenta? <a class="a-login" href="{{ url_for('register') }}#register">Registrarse</a>
+        </p>
+      </div>
+    </div>
+  </section>
+{% endblock %}
