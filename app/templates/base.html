@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Oasis Virtual</title>
+    <link
+      rel="stylesheet"
+      href="{{url_for('static', filename='css/globals.css')}}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{url_for('static', filename='css/main.css')}}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{url_for('static', filename='css/more_games.css')}}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{url_for('static', filename='css/login.css')}}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{url_for('static', filename='css/register.css')}}"
+    />
+  </head>
+  <body>
+    <section class="nav">
+      <h1 id="home" style="cursor: pointer">OASIS VIRTUAL</h1>
+      <script>
+        document.querySelector("h1").onclick = sectionNavegate;
+      </script>
+      <h3 class="span loader">
+        <span class="m">TU </span><span class="m">ESCAPE </span
+        ><span class="m">DE </span><span class="m">LA </span
+        ><span class="m">REALIDAD</span>
+      </h3>
+      <div class="nav-container">
+        <a class="nav-tab" href="{{ url_for('home') }}#about-us"
+          >ACERCA DE NOSOTROS</a
+        >
+        <a class="nav-tab" href="{{ url_for('home') }}#game">JUEGOS</a>
+        <a class="nav-tab" href="{{ url_for('more_games') }}#moregames"
+          >MAS JUEGOS</a
+        >
+
+        <!-- {% if log != 1 %} -->
+        <!-- <a class="nav-tab" href="#register">REGISTRARSE</a> -->
+        <!-- <a class="nav-tab" href="{{ url_for('login') }}#login" -->
+        <!--   >INICIAR SESION</a -->
+        <!-- > -->
+        <!-- {% else %} -->
+        <!-- <a class="nav-tab" href="">SALIR</a> -->
+        <!-- {% endif %} -->
+        <!-- <span class="nav-tab-slider"></span> -->
+      </div>
+    </section>
+    {% block content %} {% endblock %}
+
+    <script src="{{ url_for('static', filename='js/details_game.js') }}"></script>
+    <!-- <script src="{{ url_for('static', filename='js/register.js') }}"></script> -->
+    <!-- <script src="{{ url_for('static', filename='js/login.js') }}"></script> -->
+
+    <script>
+      const h1 = document.getElementById("home");
+
+      h1.addEventListener("click", function () {
+        window.location.href = "#";
+      });
+    </script>
+  </body>
+</html>
+
